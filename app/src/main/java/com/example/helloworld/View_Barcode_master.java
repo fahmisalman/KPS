@@ -73,9 +73,11 @@ public class View_Barcode_master extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String sbgm_barcode = list.get(position).getBarcode();
                 String sbgm_loi = list.get(position).getId_loi();
+                int sbgm_lock = list.get(position).getLock();
                 Intent intent = new Intent(View_Barcode_master.this, View_Barcode_detail.class);
                 intent.putExtra("barcode", sbgm_barcode);
                 intent.putExtra("loi", sbgm_loi);
+                intent.putExtra("lock", sbgm_lock);
                 startActivity(intent);
             }
         });

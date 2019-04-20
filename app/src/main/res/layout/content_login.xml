@@ -15,7 +15,7 @@
         android:layout_marginTop="260dp"
         android:layout_marginBottom="370dp"
         android:ems="10"
-        android:hint="userame"
+        android:hint="username"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

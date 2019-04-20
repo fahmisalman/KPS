@@ -15,14 +15,12 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="7dp"
-        android:layout_marginRight="7dp"
+        android:layout_marginEnd="112dp"
+        android:layout_marginRight="112dp"
         android:ems="10"
         android:hint="Barcode"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btn_add_detail"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -45,59 +43,50 @@
         android:id="@+id/txt_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="306dp"
-        android:layout_marginLeft="306dp"
-        android:layout_marginTop="75dp"
-        android:layout_marginEnd="81dp"
-        android:layout_marginRight="81dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:text="Edit"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/txt_remove"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_barcode_detail" />
 
     <TextView
         android:id="@+id/txt_remove"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="334dp"
-        android:layout_marginLeft="334dp"
-        android:layout_marginTop="75dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginRight="25dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginLeft="49dp"
+        android:layout_marginTop="8dp"
         android:onClick="remove_intent"
         android:text="Remove"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_barcode_detail" />
 
     <ListView
         android:id="@+id/list_detail"
         android:layout_width="395dp"
-        android:layout_height="501dp"
+        android:layout_height="545dp"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="7dp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_submit_detail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_edit" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_submit_detail" />
 
     <Button
         android:id="@+id/btn_submit_detail"
         android:layout_width="wrap_content"
         android:layout_height="49dp"
-        android:layout_marginStart="314dp"
-        android:layout_marginLeft="314dp"
-        android:layout_marginTop="610dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginRight="9dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginStart="306dp"
+        android:layout_marginLeft="306dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginRight="17dp"
         android:onClick="submit"
         android:text="Submit"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

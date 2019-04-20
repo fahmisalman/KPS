@@ -5,4 +5,5 @@
     <string name="title_activity_main3">Main3Activity</string>
     <string name="title_activity_barcode_detail">Barcode_detail</string>
     <string name="title_activity_remove_form">Remove_form</string>
+    <string name="add_new">Add New</string>
 </resources>
