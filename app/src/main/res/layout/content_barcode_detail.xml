@@ -64,8 +64,8 @@
         android:layout_marginTop="75dp"
         android:layout_marginEnd="25dp"
         android:layout_marginRight="25dp"
-        android:text="Remove"
         android:onClick="remove_intent"
+        android:text="Remove"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -75,6 +75,8 @@
         android:layout_width="395dp"
         android:layout_height="501dp"
         android:layout_marginTop="8dp"
+        android:layout_marginBottom="7dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_submit_detail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -83,13 +85,19 @@
     <Button
         android:id="@+id/btn_submit_detail"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="314dp"
+        android:layout_marginLeft="314dp"
+        android:layout_marginTop="610dp"
         android:layout_marginEnd="9dp"
         android:layout_marginRight="9dp"
-        android:layout_marginBottom="17dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="submit"
         android:text="Submit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/list_detail" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 </android.support.constraint.ConstraintLayout>

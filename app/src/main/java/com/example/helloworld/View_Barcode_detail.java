@@ -89,8 +89,6 @@ public class View_Barcode_detail extends AppCompatActivity {
                             e.printStackTrace();
                         }
 
-
-
                     }
 
                 }, new Response.ErrorListener() {
@@ -165,6 +163,55 @@ public class View_Barcode_detail extends AppCompatActivity {
         Intent intent = new Intent(View_Barcode_detail.this, Remove_form.class);
         intent.putExtra("barcode", id_master);
         startActivity(intent);
+
+    }
+
+    public void submit(View view) {
+
+        String url = "http://10.0.2.2:80/restserver/index.php/barcode_group";
+        StringRequest jsonreq = new StringRequest(Request.Method.PUT, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+
+                        Log.d("Response", response);
+
+                        Intent intent = new Intent(View_Barcode_detail.this, View_Barcode_master.class);
+                        intent.putExtra("barcode", id_master);
+                        intent.putExtra("loi", id_loi);
+                        startActivity(intent);
+
+                    }
+                },
+
+                new Response.ErrorListener()
+                {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.d("Error.Response", error.toString());
+                    }
+                }
+        ) {
+            @Override
+            protected Map<String, String> getParams()
+            {
+                Map<String, String>  params = new HashMap<String, String>();
+                params.put("id_master", id_master);
+
+                return params;
+            }
+
+//            @Override
+//            public Map<String, String> getHeaders() throws AuthFailureError {
+//                Map<String,String> params = new HashMap<String, String>();
+//                params.put("Content-Type","application/x-www-form-urlencoded");
+//                return params;
+//            }
+
+        };
+
+        MySingleton.getInstance(this).addToRequestQueue(jsonreq);
+
 
     }
 }

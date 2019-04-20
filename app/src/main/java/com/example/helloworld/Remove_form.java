@@ -48,8 +48,6 @@ public class Remove_form extends AppCompatActivity {
 
     public void remove(View view) {
 
-        System.out.println("14123");
-
         final EditText barcode_text = (EditText) findViewById(R.id.txt_barcode);
         String url = "http://10.0.2.2:80/restserver/index.php/barcode_group_detail";
 
@@ -57,8 +55,6 @@ public class Remove_form extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-
-                        System.out.println("Wakwaw");
 
                         Log.d("Response", response);
 
@@ -82,7 +78,6 @@ public class Remove_form extends AppCompatActivity {
             protected Map<String, String> getParams()
             {
                 Map<String, String>  params = new HashMap<String, String>();
-                System.out.println(id_master + Session.getUsername() + barcode_text.getText().toString());
                 params.put("id_master", id_master);
                 params.put("SBGM_BARCODE_ORDER_DETAIL", barcode_text.getText().toString());
                 params.put("username", Session.getUsername());
