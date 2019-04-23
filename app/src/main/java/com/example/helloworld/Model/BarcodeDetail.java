@@ -3,13 +3,15 @@ package com.example.helloworld.Model;
 public class BarcodeDetail {
 
     private String barcode;
+    private String barcode_master;
     private String id_loi;
     private int quantity;
 
-    public BarcodeDetail(String barcode, String id_loi, int quan) {
+    public BarcodeDetail(String barcode, String id_loi, int quan, String master) {
         this.setBarcode(barcode);
         this.setId_loi(id_loi);
         this.setQuantity(quan);
+        this.setBarcode_master(master);
     }
 
     public String getBarcode() {
@@ -35,5 +37,13 @@ public class BarcodeDetail {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public String getBarcode_master() {
+        return barcode_master;
+    }
+
+    public void setBarcode_master(String barcode_master) {
+        this.barcode_master = barcode_master;
     }
 }

@@ -2,15 +2,12 @@ package com.example.helloworld;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -48,7 +45,7 @@ public class Remove_form extends AppCompatActivity {
 
     public void remove(View view) {
 
-        final EditText barcode_text = (EditText) findViewById(R.id.txt_barcode);
+        final EditText barcode_text = (EditText) findViewById(R.id.txt_barcodeid);
         String url = "http://10.0.2.2:80/restserver/index.php/barcode_group_detail";
 
         StringRequest jsonreq = new StringRequest(Request.Method.DELETE, url,

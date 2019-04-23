@@ -66,8 +66,9 @@ public class View_Barcode_detail extends AppCompatActivity {
                             for (int i = 0; i < j.length(); i++) {
                                 try {
                                     JSONObject obj = j.getJSONObject(i);
-                                    BarcodeDetail dataSet = new BarcodeDetail(obj.getString("barcode_master_id"),
-                                        obj.getString("KPS_LOI_ID_label"), obj.getInt("QUANTITY")
+                                    BarcodeDetail dataSet = new BarcodeDetail(obj.getString("barcode"),
+                                        obj.getString("KPS_LOI_ID_label"), obj.getInt("QUANTITY"),
+                                        obj.getString("barcode_master_id")
                                     );
                                 list.add(dataSet);
 

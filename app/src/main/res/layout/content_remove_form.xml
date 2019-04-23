@@ -9,7 +9,7 @@
     tools:showIn="@layout/activity_remove_form">
 
     <EditText
-        android:id="@+id/txt_barcode"
+        android:id="@+id/txt_barcodeid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="240dp"

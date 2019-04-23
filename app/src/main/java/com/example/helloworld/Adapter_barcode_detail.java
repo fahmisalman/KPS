@@ -58,15 +58,13 @@ public class Adapter_barcode_detail extends BaseAdapter {
 //            imageLoader = Controller.getPermission().getImageLoader();
         NetworkImageView thumbNail = (NetworkImageView) convertView
                 .findViewById(R.id.thumbnail);
-        TextView name = (TextView) convertView.findViewById(R.id.txt_barcode);
-        TextView worth = (TextView) convertView.findViewById(R.id.txt_detailofbarcode);
-        TextView source = (TextView) convertView.findViewById(R.id.source);
-        TextView year = (TextView) convertView.findViewById(R.id.inYear);
+        TextView name = (TextView) convertView.findViewById(R.id.txt_barcodeid);
+        TextView quantity = (TextView) convertView.findViewById(R.id.txt_quantity);
         BarcodeDetail m = DataList.get(position);
-        name.setText(m.getBarcode());
-//        source.setText("Wealth Source: " + String.valueOf(m.getLevel()));
-//        worth.setText(String.valueOf(m.getLine()));
-//        year.setText(String.valueOf(m.getSpace()));
+        String temp1 = "Barcode id:" + m.getBarcode() + " (" + m.getBarcode_master() + ")";
+        String temp2 = "Quantity:" + m.getQuantity();
+        name.setText(temp1);
+        quantity.setText(temp2);
 
         return convertView;
     }
