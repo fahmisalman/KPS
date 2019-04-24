@@ -61,20 +61,18 @@ public class Adapter_barcode_master extends BaseAdapter {
         TextView barcode = (TextView) convertView.findViewById(R.id.txt_barcodeid);
         TextView detailofbarcode = (TextView) convertView.findViewById(R.id.txt_quantity);
         TextView lock = (TextView) convertView.findViewById(R.id.txt_lock);
-//        TextView year = (TextView) convertView.findViewById(R.id.inYear);
         Barcode m = DataList.get(position);
-        String temp1 = m.getCodeitem() + " | "+ m.getBarcode();
-        String temp2 = "Made by/Quanttiy: " + m.getMadeby() + "/" + String.valueOf(m.getQuantity());
+        String temp1 = "ID | Barcode: " + m.getCodeitem() + " | "+ m.getBarcode();
+        String temp2 = "Made by | Quanttiy: " + m.getMadeby() + " / " + String.valueOf(m.getQuantity());
         String temp3;
         if (m.getLock() == 0) {
-            temp3 = "Unlock";
+            temp3 = "Status: Unlock";
         } else {
-            temp3 = "Lock";
+            temp3 = "Status: Lock";
         }
         barcode.setText(temp1);
         detailofbarcode.setText(temp2);
         lock.setText(temp3);
-//        year.setText(String.valueOf(m.getSpace()));
 
         return convertView;
     }

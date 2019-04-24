@@ -59,6 +59,7 @@ public class Remove_form extends AppCompatActivity {
                         intent.putExtra("barcode", id_master);
                         intent.putExtra("loi", id_loi);
                         startActivity(intent);
+                        finish();
 
                     }
                 },

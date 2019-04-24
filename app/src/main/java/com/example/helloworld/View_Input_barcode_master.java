@@ -61,6 +61,7 @@ public class View_Input_barcode_master extends AppCompatActivity {
 
                             Intent intent = new Intent(View_Input_barcode_master.this, View_Barcode_master.class);
                             startActivity(intent);
+                            finish();
 
 
                         } catch (Throwable tx) {

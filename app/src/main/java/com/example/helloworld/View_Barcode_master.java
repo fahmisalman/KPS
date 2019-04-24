@@ -79,6 +79,8 @@ public class View_Barcode_master extends AppCompatActivity {
                 intent.putExtra("loi", sbgm_loi);
                 intent.putExtra("lock", sbgm_lock);
                 startActivity(intent);
+//                finish();
+
             }
         });
     }

@@ -61,8 +61,8 @@ public class Adapter_barcode_detail extends BaseAdapter {
         TextView name = (TextView) convertView.findViewById(R.id.txt_barcodeid);
         TextView quantity = (TextView) convertView.findViewById(R.id.txt_quantity);
         BarcodeDetail m = DataList.get(position);
-        String temp1 = "Barcode id:" + m.getBarcode() + " (" + m.getBarcode_master() + ")";
-        String temp2 = "Quantity:" + m.getQuantity();
+        String temp1 = "Barcode id : " + m.getBarcode() + " (" + m.getBarcode_master() + ")";
+        String temp2 = "Quantity : " + m.getQuantity();
         name.setText(temp1);
         quantity.setText(temp2);
 

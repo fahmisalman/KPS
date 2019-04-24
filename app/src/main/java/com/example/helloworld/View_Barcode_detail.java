@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -38,6 +39,7 @@ public class View_Barcode_detail extends AppCompatActivity {
     private String id_master = "";
     private String id_loi = "";
     private int lock = 0;
+    private int quantity = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,18 +68,23 @@ public class View_Barcode_detail extends AppCompatActivity {
                             for (int i = 0; i < j.length(); i++) {
                                 try {
                                     JSONObject obj = j.getJSONObject(i);
-                                    BarcodeDetail dataSet = new BarcodeDetail(obj.getString("barcode"),
+                                    BarcodeDetail dataSet = new BarcodeDetail(obj.getString("BARCODE"),
                                         obj.getString("KPS_LOI_ID_label"), obj.getInt("QUANTITY"),
                                         obj.getString("barcode_master_id")
                                     );
-                                list.add(dataSet);
+                                    quantity = quantity + obj.getInt("QUANTITY");
+                                    list.add(dataSet);
 
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }
 
                             }
+
+                            TextView quan = (TextView) findViewById(R.id.txt_quantity);
+                            quan.setText("Total quantity: " + quantity);
                             adapter_barcode_detail.notifyDataSetChanged();
+
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -109,7 +116,6 @@ public class View_Barcode_detail extends AppCompatActivity {
             final EditText barcode_detail = (EditText) findViewById(R.id.txt_barcode_detail);
 
             String url = "http://10.0.2.2:80/restserver/index.php/barcode_group_detail";
-//        RequestQueue queue = Volley.newRequestQueue(this);
             StringRequest jsonreq = new StringRequest(Request.Method.POST, url,
                     new Response.Listener<String>() {
                         @Override
@@ -186,6 +192,7 @@ public class View_Barcode_detail extends AppCompatActivity {
                             intent.putExtra("barcode", id_master);
                             intent.putExtra("loi", id_loi);
                             startActivity(intent);
+                            finish();
 
                         }
                     },
@@ -218,6 +225,16 @@ public class View_Barcode_detail extends AppCompatActivity {
         } else {
 
         }
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        Intent intent = new Intent(View_Barcode_detail.this, View_Barcode_master.class);
+        startActivity(intent);
+
 
     }
 }

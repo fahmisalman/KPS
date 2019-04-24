@@ -91,6 +91,7 @@ public class View_Login extends AppCompatActivity {
                                 Session.setUsername(username);
                                 Intent intent = new Intent(View_Login.this, View_Barcode_master.class);
                                 startActivity(intent);
+                                finish();
                             }
 
 

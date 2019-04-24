@@ -49,6 +49,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:text="Edit"
+        android:textColor="@color/design_default_color_primary"
         app:layout_constraintEnd_toStartOf="@+id/txt_remove"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_barcode_detail" />
@@ -62,6 +63,7 @@
         android:layout_marginTop="8dp"
         android:onClick="remove_intent"
         android:text="Remove"
+        android:textColor="@color/colorAccent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_barcode_detail" />
 
@@ -89,4 +91,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_quantity"
+        android:layout_width="283dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toStartOf="@+id/btn_submit_detail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_edit" />
 </android.support.constraint.ConstraintLayout>
