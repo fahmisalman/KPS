@@ -2,24 +2,19 @@ package com.example.helloworld;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
-import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.example.helloworld.Model.BarcodeDetail;
 
 import org.json.JSONArray;
@@ -166,7 +161,7 @@ public class View_Barcode_detail extends AppCompatActivity {
 
         if (lock != 1) {
 
-            Intent intent = new Intent(View_Barcode_detail.this, Remove_form.class);
+            Intent intent = new Intent(View_Barcode_detail.this, View_Remove_form.class);
             intent.putExtra("barcode", id_master);
             startActivity(intent);
 
@@ -234,7 +229,7 @@ public class View_Barcode_detail extends AppCompatActivity {
 
         Intent intent = new Intent(View_Barcode_detail.this, View_Barcode_master.class);
         startActivity(intent);
-
+        finish();
 
     }
 }

@@ -61,7 +61,6 @@ public class View_Input_barcode_master extends AppCompatActivity {
 
                             Intent intent = new Intent(View_Input_barcode_master.this, View_Barcode_master.class);
                             startActivity(intent);
-                            finish();
 
 
                         } catch (Throwable tx) {
@@ -98,5 +97,12 @@ public class View_Input_barcode_master extends AppCompatActivity {
 
         queue.add(postRequest);
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(View_Input_barcode_master.this, View_Barcode_master.class);
+        startActivity(intent);
+        finish();
     }
 }

@@ -16,7 +16,7 @@ import com.android.volley.toolbox.StringRequest;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Remove_form extends AppCompatActivity {
+public class View_Remove_form extends AppCompatActivity {
 
     private String id_master = "";
     private String id_loi = "";
@@ -55,7 +55,7 @@ public class Remove_form extends AppCompatActivity {
 
                         Log.d("Response", response);
 
-                        Intent intent = new Intent(Remove_form.this, View_Barcode_master.class);
+                        Intent intent = new Intent(View_Remove_form.this, View_Barcode_master.class);
                         intent.putExtra("barcode", id_master);
                         intent.putExtra("loi", id_loi);
                         startActivity(intent);

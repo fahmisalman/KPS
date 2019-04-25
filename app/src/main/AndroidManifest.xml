@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Remove_form"
+            android:name=".View_Remove_form"
             android:label="@string/title_activity_remove_form"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
@@ -24,7 +24,6 @@
             android:name=".View_Barcode_master"
             android:label="@string/title_activity_main3"
             android:theme="@style/AppTheme.NoActionBar" />
-            android:noHistory="true">
         <activity
             android:name=".View_Input_barcode_master"
             android:label="@string/title_activity_main2"
