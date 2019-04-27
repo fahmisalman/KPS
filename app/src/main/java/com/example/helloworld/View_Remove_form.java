@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -47,13 +48,13 @@ public class View_Remove_form extends AppCompatActivity {
 
         final EditText barcode_text = (EditText) findViewById(R.id.txt_barcodeid);
         String url = "http://10.0.2.2:80/restserver/index.php/barcode_group_detail";
-
-        StringRequest jsonreq = new StringRequest(Request.Method.DELETE, url,
+        StringRequest jsonreq = new StringRequest(Request.Method.PUT, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
 
                         Log.d("Response", response);
+                        Log.d("Tag",id_master + barcode_text.getText().toString());
 
                         Intent intent = new Intent(View_Remove_form.this, View_Barcode_master.class);
                         intent.putExtra("barcode", id_master);
@@ -76,6 +77,7 @@ public class View_Remove_form extends AppCompatActivity {
             protected Map<String, String> getParams()
             {
                 Map<String, String>  params = new HashMap<String, String>();
+                Log.d("Tag",id_master + barcode_text.getText().toString());
                 params.put("id_master", id_master);
                 params.put("SBGM_BARCODE_ORDER_DETAIL", barcode_text.getText().toString());
                 params.put("username", Session.getUsername());

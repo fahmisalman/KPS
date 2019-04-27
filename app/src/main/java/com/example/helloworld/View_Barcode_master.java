@@ -58,11 +58,14 @@ public class View_Barcode_master extends AppCompatActivity {
                                         obj.getInt("SBGM_STATUS_LOCK"));
                                 Log.d("Barcode", dataSet.getBarcode());
                                 list.add(dataSet);
+
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
 
                         }
+
+                        adapterBarcodemaster.notifyDataSetChanged();
                     }
                 }, new Response.ErrorListener() {
                         @Override
