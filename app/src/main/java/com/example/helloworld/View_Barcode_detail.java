@@ -1,7 +1,9 @@
 package com.example.helloworld;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -9,6 +11,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -151,6 +154,19 @@ public class View_Barcode_detail extends AppCompatActivity {
             MySingleton.getInstance(this).addToRequestQueue(jsonreq);
         } else {
 
+            AlertDialog.Builder builder = new AlertDialog.Builder(View_Barcode_detail.this);
+            builder.setTitle("Alert dialog demo !");
+            builder.setMessage("This is an alert dialog message");
+            builder.setCancelable(true);
+            builder.setNeutralButton("Ok", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Toast.makeText(getApplicationContext(), "Neutral button clicked", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            builder.show();
+
         }
 
 //        queue.add(jsonreq);
@@ -166,6 +182,19 @@ public class View_Barcode_detail extends AppCompatActivity {
             startActivity(intent);
 
         } else {
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(View_Barcode_detail.this);
+            builder.setTitle("Alert dialog demo !");
+            builder.setMessage("This is an alert dialog message");
+            builder.setCancelable(true);
+            builder.setNeutralButton("Ok", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Toast.makeText(getApplicationContext(), "Neutral button clicked", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            builder.show();
 
         }
 
@@ -218,6 +247,19 @@ public class View_Barcode_detail extends AppCompatActivity {
 
             MySingleton.getInstance(this).addToRequestQueue(jsonreq);
         } else {
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(View_Barcode_detail.this);
+            builder.setTitle("Alert dialog demo !");
+            builder.setMessage("This is an alert dialog message");
+            builder.setCancelable(true);
+            builder.setNeutralButton("Ok", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Toast.makeText(getApplicationContext(), "Neutral button clicked", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            builder.show();
 
         }
 

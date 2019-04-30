@@ -1,14 +1,19 @@
 package com.example.helloworld;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.PopupWindow;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -58,6 +63,19 @@ public class View_Input_barcode_master extends AppCompatActivity {
 
                             JSONObject obj = new JSONObject(response);
                             Log.d("JSON", obj.toString());
+
+                            AlertDialog.Builder builder = new AlertDialog.Builder(View_Input_barcode_master.this);
+                            builder.setTitle("Alert dialog demo !");
+                            builder.setMessage("This is an alert dialog message");
+                            builder.setCancelable(true);
+                            builder.setNeutralButton("Ok", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    Toast.makeText(getApplicationContext(), "Neutral button clicked", Toast.LENGTH_SHORT).show();
+                                }
+                            });
+
+                            builder.show();
 
                             Intent intent = new Intent(View_Input_barcode_master.this, View_Barcode_master.class);
                             startActivity(intent);
