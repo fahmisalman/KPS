@@ -70,6 +70,8 @@ public class View_Login extends AppCompatActivity {
         final EditText text_user = (EditText) findViewById(R.id.username);
         final EditText text_pass = (EditText) findViewById(R.id.pass);
 
+        validation.setVisibility(View.INVISIBLE);
+
         RequestQueue queue = Volley.newRequestQueue(this);
         String url = "http://10.0.2.2:80/restserver/index.php/login";
         StringRequest postRequest = new StringRequest(Request.Method.POST, url,

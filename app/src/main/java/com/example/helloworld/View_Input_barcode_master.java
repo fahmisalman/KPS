@@ -35,15 +35,6 @@ public class View_Input_barcode_master extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-//        FloatingActionButton fab = findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
     }
 
     public void Add(View view) {
@@ -72,13 +63,12 @@ public class View_Input_barcode_master extends AppCompatActivity {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                     Toast.makeText(getApplicationContext(), "Neutral button clicked", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(View_Input_barcode_master.this, View_Barcode_master.class);
+                                    startActivity(intent);
                                 }
                             });
 
                             builder.show();
-
-                            Intent intent = new Intent(View_Input_barcode_master.this, View_Barcode_master.class);
-                            startActivity(intent);
 
 
                         } catch (Throwable tx) {
@@ -99,10 +89,6 @@ public class View_Input_barcode_master extends AppCompatActivity {
             protected Map<String, String> getParams()
             {
                 Map<String, String>  params = new HashMap<String, String>();
-                System.out.println(barcode.getText().toString() +
-                        line.getText().toString() +
-                        level.getText().toString() +
-                        space.getText().toString());
                 params.put("SBGM_BARCODE_ORDER_DETAIL", barcode.getText().toString());
                 params.put("SBGM_LINE", line.getText().toString());
                 params.put("SBGM_LEVEL", level.getText().toString());
