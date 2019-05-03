@@ -83,7 +83,6 @@ public class View_Login extends AppCompatActivity {
 
                             JSONObject obj = new JSONObject(response);
 
-                            Log.d("JSON", obj.toString());
                             String status = obj.getString("status");
                             String username = obj.getString("username");
                             String role = obj.getString("role");

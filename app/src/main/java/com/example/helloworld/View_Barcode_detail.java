@@ -152,16 +152,17 @@ public class View_Barcode_detail extends AppCompatActivity {
             };
 
             MySingleton.getInstance(this).addToRequestQueue(jsonreq);
+
         } else {
 
             AlertDialog.Builder builder = new AlertDialog.Builder(View_Barcode_detail.this);
-            builder.setTitle("Alert dialog demo !");
-            builder.setMessage("This is an alert dialog message");
+            builder.setTitle("Lock");
+            builder.setMessage("Status barcode terkunci");
             builder.setCancelable(true);
             builder.setNeutralButton("Ok", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    Toast.makeText(getApplicationContext(), "Neutral button clicked", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getApplicationContext(), "Neutral button clicked", Toast.LENGTH_SHORT).show();
                 }
             });
 
@@ -184,13 +185,13 @@ public class View_Barcode_detail extends AppCompatActivity {
         } else {
 
             AlertDialog.Builder builder = new AlertDialog.Builder(View_Barcode_detail.this);
-            builder.setTitle("Alert dialog demo !");
-            builder.setMessage("This is an alert dialog message");
+            builder.setTitle("Lock");
+            builder.setMessage("Status barcode terkunci");
             builder.setCancelable(true);
             builder.setNeutralButton("Ok", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    Toast.makeText(getApplicationContext(), "Neutral button clicked", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getApplicationContext(), "Neutral button clicked", Toast.LENGTH_SHORT).show();
                 }
             });
 
@@ -246,16 +247,17 @@ public class View_Barcode_detail extends AppCompatActivity {
             };
 
             MySingleton.getInstance(this).addToRequestQueue(jsonreq);
+
         } else {
 
             AlertDialog.Builder builder = new AlertDialog.Builder(View_Barcode_detail.this);
-            builder.setTitle("Alert dialog demo !");
-            builder.setMessage("This is an alert dialog message");
+            builder.setTitle("Lock");
+            builder.setMessage("Status barcode terkunci");
             builder.setCancelable(true);
             builder.setNeutralButton("Ok", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    Toast.makeText(getApplicationContext(), "Neutral button clicked", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getApplicationContext(), "Neutral button clicked", Toast.LENGTH_SHORT).show();
                 }
             });
 

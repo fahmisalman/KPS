@@ -56,8 +56,8 @@ public class Adapter_barcode_master extends BaseAdapter {
 
 //        if (imageLoader == null)
 //            imageLoader = Controller.getPermission().getImageLoader();
-        NetworkImageView thumbNail = (NetworkImageView) convertView
-                .findViewById(R.id.thumbnail);
+//        NetworkImageView thumbNail = (NetworkImageView) convertView
+//                .findViewById(R.id.thumbnail);
         TextView barcode = (TextView) convertView.findViewById(R.id.txt_barcodeid);
         TextView detailofbarcode = (TextView) convertView.findViewById(R.id.txt_quantity);
         TextView lock = (TextView) convertView.findViewById(R.id.txt_lock);

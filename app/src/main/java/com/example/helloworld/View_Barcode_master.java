@@ -34,8 +34,6 @@ public class View_Barcode_master extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        System.out.println("Cekcek");
-
         listView = (ListView) findViewById(R.id.list);
         String url = "http://10.0.2.2:80/restserver/index.php/barcode_group";
         adapterBarcodemaster = new Adapter_barcode_master(this, list);
@@ -45,7 +43,6 @@ public class View_Barcode_master extends AppCompatActivity {
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
-                        System.out.println("Coba");
                         for (int i = 0; i < response.length(); i++) {
                             try {
 
@@ -56,7 +53,6 @@ public class View_Barcode_master extends AppCompatActivity {
                                         obj.getString("SBGM_CREATE_BY"),
                                         obj.getString("SBGM_LOI_ID"),
                                         obj.getInt("SBGM_STATUS_LOCK"));
-                                Log.d("Barcode", dataSet.getBarcode());
                                 list.add(dataSet);
 
                             } catch (JSONException e) {
@@ -87,7 +83,6 @@ public class View_Barcode_master extends AppCompatActivity {
                 intent.putExtra("lock", sbgm_lock);
                 startActivity(intent);
                 finish();
-
             }
         });
     }

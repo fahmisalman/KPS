@@ -52,17 +52,16 @@ public class View_Input_barcode_master extends AppCompatActivity {
                     public void onResponse(String response) {
                         try {
 
-                            JSONObject obj = new JSONObject(response);
-                            Log.d("JSON", obj.toString());
+//                            JSONObject obj = new JSONObject(response);
 
                             AlertDialog.Builder builder = new AlertDialog.Builder(View_Input_barcode_master.this);
-                            builder.setTitle("Alert dialog demo !");
-                            builder.setMessage("This is an alert dialog message");
+                            builder.setTitle("Input barcode master");
+                            builder.setMessage("Barcode master berhasil ditambahkan");
                             builder.setCancelable(true);
                             builder.setNeutralButton("Ok", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    Toast.makeText(getApplicationContext(), "Neutral button clicked", Toast.LENGTH_SHORT).show();
+//                                    Toast.makeText(getApplicationContext(), "Neutral button clicked", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(View_Input_barcode_master.this, View_Barcode_master.class);
                                     startActivity(intent);
                                 }

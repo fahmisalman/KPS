@@ -48,37 +48,18 @@ public class View_Remove_form extends AppCompatActivity {
 
     public void remove(View view) {
 
-        final EditText barcode_text = (EditText) findViewById(R.id.txt_barcodeid);
         String url = "http://10.0.2.2:80/restserver/index.php/barcode_group_detail";
-        StringRequest jsonreq = new StringRequest(Request.Method.PUT, url,
+        final EditText barcode_text = (EditText) findViewById(R.id.txt_barcodeid);
+        final StringRequest jsonreq = new StringRequest(Request.Method.PUT, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
 
-                        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(View_Remove_form.this);
-                        alertDialogBuilder.setTitle("Keluar dari aplikasi?");
-                        alertDialogBuilder
-                                .setMessage("Klik Ya untuk keluar!")
-                                .setIcon(R.mipmap.ic_launcher)
-                                .setCancelable(false)
-                                .setPositiveButton("Ya", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog,int id) {
-                                        // jika tombol diklik, maka akan menutup activity ini
-                                        Intent intent = new Intent(View_Remove_form.this, View_Barcode_master.class);
-                                        intent.putExtra("barcode", id_master);
-                                        intent.putExtra("loi", id_loi);
-                                        startActivity(intent);
-                                        finish();
-                                    }
-                                })
-                                .setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog, int id) {
-                                        dialog.cancel();
-                                    }
-                                });
-
-                        AlertDialog alertDialog = alertDialogBuilder.create();
-                        alertDialog.show();
+                        Intent intent = new Intent(View_Remove_form.this, View_Barcode_master.class);
+                        intent.putExtra("barcode", id_master);
+                        intent.putExtra("loi", id_loi);
+                        startActivity(intent);
+                        finish();
 
                     }
                 },
@@ -95,7 +76,6 @@ public class View_Remove_form extends AppCompatActivity {
             protected Map<String, String> getParams()
             {
                 Map<String, String>  params = new HashMap<String, String>();
-                Log.d("Tag",id_master + barcode_text.getText().toString());
                 params.put("id_master", id_master);
                 params.put("SBGM_BARCODE_ORDER_DETAIL", barcode_text.getText().toString());
                 params.put("username", Session.getUsername());
@@ -112,7 +92,25 @@ public class View_Remove_form extends AppCompatActivity {
 
         };
 
-        MySingleton.getInstance(this).addToRequestQueue(jsonreq);
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(View_Remove_form.this);
+        alertDialogBuilder.setTitle("Remove barcode");
+        alertDialogBuilder
+                .setMessage("Apakah anda yakin untuk menghapus barcode "+ barcode_text.getText().toString() + "?")
+//                                .setIcon(R.mipmap.ic_launcher)
+                .setCancelable(false)
+                .setPositiveButton("Ya", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,int id) {
+                        MySingleton.getInstance(View_Remove_form.this).addToRequestQueue(jsonreq);
+                    }
+                })
+                .setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
 
     }
 }
