@@ -135,6 +135,7 @@ public class View_Barcode_detail extends AppCompatActivity {
                         @Override
                         public void onErrorResponse(VolleyError error) {
                             Log.d("Error.Response", error.toString());
+                            Log.d("Error", "Wakwaw");
                         }
                     }
             ) {
@@ -142,6 +143,7 @@ public class View_Barcode_detail extends AppCompatActivity {
                 protected Map<String, String> getParams()
                 {
                     Map<String, String>  params = new HashMap<String, String>();
+                    Log.d("Tag", id_master + barcode_detail.getText().toString() + Session.getUsername() + id_loi);
                     params.put("id_master", id_master);
                     params.put("SBGM_BARCODE_ORDER_DETAIL", barcode_detail.getText().toString());
                     params.put("username", Session.getUsername());
@@ -181,6 +183,7 @@ public class View_Barcode_detail extends AppCompatActivity {
             Intent intent = new Intent(View_Barcode_detail.this, View_Remove_form.class);
             intent.putExtra("barcode", id_master);
             startActivity(intent);
+            finish();
 
         } else {
 
